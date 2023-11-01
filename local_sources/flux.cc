@@ -6,8 +6,8 @@ using namespace dealii;
 
 double continuous_flux(const double u)
 {
-     return u; 
-    // return 0.5*u*u; 
+        return u; 
+     //return 0.5*u*u; 
 }
 
 Vector<double> numerical_flux(const Vector<double> &U)

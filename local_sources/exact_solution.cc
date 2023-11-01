@@ -12,9 +12,8 @@ double ExactSolution<dim>::value(const Point<dim> &p, const unsigned int /*compo
 {
     const double time = this->get_time();
 
-
-
-    #if 0 
+    #if 0
+    // Trapezoid //
     if(p[0]>=0 && p[0]<=1 + time)
         {
             return (1./(1.+time))*p[0]; 
@@ -33,24 +32,23 @@ double ExactSolution<dim>::value(const Point<dim> &p, const unsigned int /*compo
     else {
                 return 0;
          }
-    #endif 
-    double result; 
+#endif 
+ 
 
+    // Block //
    #if 0
     if(p[0] >= 0.25 && p[0]<= 0.75)
     {
         return 1;
     }
-
-    
     else {
     return 0; 
     }
     #endif 
    
+    // Cosine wave //
+    return  cos(2 * numbers::PI * p[0] + 2*numbers::PI*time);
 
-    result = cos(2 * numbers::PI * p[0] + 2*numbers::PI*time);
-    return result;
 
 }
 
