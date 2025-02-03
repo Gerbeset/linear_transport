@@ -24,6 +24,7 @@
 #include "vectors.h"
 #include "error_analysis.h"
 #include "explicit.h"
+#include "output_result.h"
 
 
 using namespace dealii;
@@ -76,7 +77,7 @@ int main()
 
   std::cout<<"mesh size = "<<mesh_size<<std::endl<<std::endl; 
 
-  double max_initial_value; 
+  double max_initial_value=0.0; 
 
  for(unsigned int i = 0; i < vectors.initial_condition.size(); ++i)
   {
@@ -107,6 +108,12 @@ int main()
     if(time_step_number % 100 == 0.0)
     {
       std::cout<<"Current time step: "<< time_step_number<<std::endl; 
+    }
+
+        if(time_step_number % 25 == 0.0)
+    {
+      std::cout<<"Current time step: "<< time_step_number<<std::endl; 
+      output_result(dof_handler, vectors.solution, time_step_number,time); 
     }
     
     vectors.solution = explicit_.step(vectors.old_solution, time_step); 
