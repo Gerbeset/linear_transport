@@ -1,4 +1,4 @@
 build/
 .cache/
 executable/
-compile_commonds.json
+compile_commands.json
