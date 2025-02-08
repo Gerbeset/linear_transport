@@ -1,3 +1,0 @@
-set number_of_refinements = 8
-set CFL = 0.5
-set final_time = 1
