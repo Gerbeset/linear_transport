@@ -1,4 +1,5 @@
 build/
 .cache/
-executable/
+executable/*.vtu
+executable/linear_transport
 compile_commands.json
